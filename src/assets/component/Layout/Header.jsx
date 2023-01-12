@@ -5,12 +5,13 @@ import { Fragment } from "react"
 import MealsImage from "../../images/food_image.jpg"
 import HeaderCartButton from './HeaderCartButton'
 
-const Header = () => {
+const Header = (props) => {
+  
   return (
     <div>
         <header className={classes.header}>
             <h1>ReactMeals</h1>
-            <HeaderCartButton/>
+            <HeaderCartButton showCart={props.showCart}/>
         </header>
         <div className={classes['main-image']}>
             <img src={MealsImage} alt="No Image there" />
