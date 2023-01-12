@@ -1,15 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState, Fragment } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Header from "./assets/component/Layout/Header";
+import Meals from "./assets/component/Meals/Meals";
+import Cart from "./assets/component/Cart/Cart"
 
+const App = () => {
+
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(false)
+  }
   return (
-    <div>
-      Hellow world
-    </div>
-  )
-}
+    <Fragment>
+      {cartIsShown && <Cart/>}
+      <Header />
+      <main>
+        <Meals />
+      </main>
+    </Fragment>
+  );
+};
 
-export default App
+export default App;
